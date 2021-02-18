@@ -172,7 +172,7 @@ class game():
         self.field = field #Gamefield
         self.n_connect_to_win= n_connect_to_win #how many connected markers are needed for a win
         # check if winning is actually possible
-        if (not any(self.field.field_matrix.shape)>n_connect_to_win):
+        if (not max(self.field.field_matrix.shape)>=n_connect_to_win):
             raise("Game is unwinnable as field is not large enough to hold lines needed to win")
     def exec_action(self,column_index,token):
         """
